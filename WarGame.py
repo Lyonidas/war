@@ -104,4 +104,12 @@ class Game:
 
         print("War is over.{} wins".format(win))
 
-    
+    def winner(self, p1, p2):
+        if p1.wins > p2.wins:
+            return p1.name
+        if p1.wins < p2.wins:
+            return p2.name
+        return "Its a tie!"
+
+game = Game()
+game.play_game()
