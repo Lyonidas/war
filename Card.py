@@ -27,4 +27,12 @@ class Card:
                 return False
         return False
 
-    
+    def __gt__(self, c2):
+        if self.value > c2.value:
+            return True
+        if self.value == c2.suit:
+            if self.suit > c2.suit:
+                return True
+            else:
+                return False
+        return False
