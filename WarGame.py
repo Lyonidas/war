@@ -75,4 +75,11 @@ class Game:
         w = w.format(winner)
         print(w)
 
-    def draw(self)
+    def draw(self, p1n, p1c, p2n, p2c):
+        d = "{} drew {} {} drew {}"
+        d = d.format(p1n, plc, p2n, p2c)
+        print(d)
+
+    def play_game(self):
+        cards = self.deck.cards
+        print("beginning War!"")
