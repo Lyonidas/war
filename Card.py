@@ -11,3 +11,8 @@ class Card:
               "8", "9", "10",
               "Jack", "Queen",
               "King", "Ace"]
+
+    def __init__(self, v, s):
+        """suit + value are ints"""
+        self.value = v
+        self.suit = s
