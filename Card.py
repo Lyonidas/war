@@ -16,3 +16,15 @@ class Card:
         """suit + value are ints"""
         self.value = v
         self.suit = s
+
+    def __lt__(self, c2):
+        if self.value < c2.value:
+            return True
+        if self.value == c2.value:
+            if self.suit < c2.suit:
+                return True
+            else:
+                return False
+        return False
+
+    
