@@ -36,3 +36,8 @@ class Card:
             else:
                 return False
         return False
+
+    def __repr__(self):
+        v = self.values[self.value] + " of " \
+        + self.suits[self.suit]
+        return v
