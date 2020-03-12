@@ -1,4 +1,4 @@
-# Preston Hudson 3/11/20 Challenge 2 Written in Python
+import random
 
 class Card:
     suits = ["spades",
@@ -41,3 +41,38 @@ class Card:
         v = self.values[self.value] + " of " \
         + self.suits[self.suit]
         return v
+
+class Deck:
+    def __init__(self):
+        self.cards = []
+        for i in range(2, 15):
+            for j in range(4):
+                self.cards.append(Card(i, j))
+        shuffle(self.cards)
+
+    def rm_card(self):
+        if len(self.cards) == 0:
+            return
+        return self.cards.pop()
+
+class Player:
+
+    def __init__(self, name):
+        self.wins = 0
+        self.card = None
+        self.name = name
+
+class Game:
+    def __init__(self):
+        name1 = input("p1 name ")
+        name2 = input("p2 name ")
+        self.deck = Deck()
+        self.p1 = Player(name1)
+        self.p2 = Player(name2)
+
+    def wins(self, winner):
+        w = "{} wins this round"
+        w = w.format(winner)
+        print(w)
+
+    def draw(self)
