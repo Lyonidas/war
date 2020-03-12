@@ -48,7 +48,7 @@ class Deck:
         for i in range(2, 15):
             for j in range(4):
                 self.cards.append(Card(i, j))
-        shuffle(self.cards)
+        random.shuffle(self.cards)
 
     def rm_card(self):
         if len(self.cards) == 0:
@@ -77,12 +77,12 @@ class Game:
 
     def draw(self, p1n, p1c, p2n, p2c):
         d = "{} drew {} {} drew {}"
-        d = d.format(p1n, plc, p2n, p2c)
+        d = d.format(p1n, p1c, p2n, p2c)
         print(d)
 
     def play_game(self):
         cards = self.deck.cards
-        print("beginning War!"")
+        print("beginning War!")
         while len(cards) >= 2:
             m= "q to quit. Any " + "key to play:"
             response = input(m)
@@ -91,7 +91,7 @@ class Game:
             p1c = self.deck.rm_card()
             p2c = self.deck.rm_card()
             p1n = self.p1.name
-            p2m = self.p2.name
+            p2n = self.p2.name
             self.draw(p1n, p1c, p2n, p2c)
             if p1c > p2c:
                 self.p1.wins += 1
